@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160620232332) do
+ActiveRecord::Schema.define(:version => 20160620233148) do
 
   create_table "moviegoers", :force => true do |t|
     t.string   "name"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20160620232332) do
     t.datetime "updated_at",   :null => false
   end
 
-  add_index "reviews", ["movie_id"], :name => "index_reviews_on_movie_id"
-  add_index "reviews", ["moviegoer_id"], :name => "index_reviews_on_moviegoer_id"
+  add_index "reviews", ["movie_id", "moviegoer_id"], :name => "index_reviews_on_movie_id_and_moviegoer_id"
 
 end
